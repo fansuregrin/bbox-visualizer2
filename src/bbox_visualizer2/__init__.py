@@ -2,7 +2,7 @@
 
 __author__ = 'Fansure Grin'
 __email__ = 'pwz113436@gmail.com'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 from .bbox_visualizer2 import (
     draw_rectangle,
