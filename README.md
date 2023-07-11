@@ -32,10 +32,13 @@ You can see [demos](./demos/) for details.
 ### Single bbox visualization
 
 - Label on the top of the bbox
+
 ![](assets/images/000013_result1.png)
 
 - Label inside the box
+
 ![](assets/images/000013_result2.png)
 
 - Set the box to opaque
+
 ![](assets/images/000013_result3.png)
