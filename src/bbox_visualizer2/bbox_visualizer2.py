@@ -90,15 +90,18 @@ class BBoxVisualizer:
 
     Attributes:
         classes: A list of class names.
+        font_fp: Path to a font file.
         colors: A list of colors; each color is a tuple of 3 intengers.
     """
-    def __init__(self, classes: List[str]):
+    def __init__(self, classes: List[str], font_fp: str):
         """Initilize the BBoxVisualizer.
 
         Args:
             classess: A list of class names; each class name is a string.
+            font_fp: Path to a font file.
         """
         self.classes = classes
+        self.font_fp = font_fp
         self.colors = self._generate_unique_colors(len(classes))
     
     def _generate_unique_colors(self,
@@ -150,7 +153,7 @@ class BBoxVisualizer:
                 color = self.colors[label_idx]
                 img = draw_rectangle(img, bbox, bbox_color=color, thickness=1)
                 img = add_label(img, label, bbox, size=12, draw_bg=True,
-                                text_bg_color=color, top=top)
+                                text_bg_color=color, top=top, font_fp=self.font_fp)
         else:
             assert len(bboxes) == len(labels) == len(scores),\
                    "bboxes, labels, and scores must have same length"
@@ -160,7 +163,7 @@ class BBoxVisualizer:
                 color = self.colors[label_idx]
                 img = draw_rectangle(img, bbox, bbox_color=color, thickness=1)
                 img = add_label(img, label, bbox, size=12, draw_bg=True,
-                                text_bg_color=color, top=top)
+                                text_bg_color=color, top=top, font_fp=self.font_fp)
         
         return img
 
@@ -226,10 +229,10 @@ def add_label(img: np.ndarray,
     """
     pil_img = Image.fromarray(img)
     draw = ImageDraw.Draw(pil_img, mode='RGBA')
-    if font_fp is not None:
-        font = ImageFont.truetype(font_fp, size=size)
+    if font_fp is None:
+        font = ImageFont.load_default()
     else:
-        font = None
+        font = ImageFont.truetype(font_fp, size=size)
     label_box = font.getbbox(label)
     label_width = label_box[2] - label_box[0]
     label_height = label_box[3] - label_box[1]
