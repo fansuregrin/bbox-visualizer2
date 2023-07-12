@@ -254,7 +254,7 @@ def add_label(img: np.ndarray,
 def draw_multiple_rectangles(img: np.ndarray,
                              bboxes: List[List[int]],
                              bbox_color: Tuple[int]=(255, 255, 255),
-                             thickness: int=3,
+                             thickness: int=1,
                              is_opaque: bool=False,
                              alpha: float=0.5) -> np.ndarray:
     """Draw multiple rectangles(boxes) to the given image.
@@ -285,7 +285,7 @@ def add_multiple_labels(img: np.ndarray,
                         alpha: float=0.5,
                         text_color: Tuple[int]=(0, 0, 0),
                         top: bool=True,
-                        font_fp: str=NotImplementedError) -> np.ndarray:
+                        font_fp: str=None) -> np.ndarray:
     """Add multiple labels to the given image.
 
     Each text label corresponds to a specific bounding box.
