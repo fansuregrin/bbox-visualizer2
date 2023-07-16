@@ -4,6 +4,8 @@ This is a python package for visualizing bounding boxes and adding labels to a g
 
 The format of a bounding box is `(xmin, ymin, xmax, ymax)`.
 
+Documentation: [https://fansuregrin.github.io/bbox-visualizer2](https://fansuregrin.github.io/bbox-visualizer2/)
+
 ## Installation
 ### From `Pypi`
 ```
