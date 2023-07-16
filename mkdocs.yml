@@ -1,0 +1,18 @@
+site_name: BBox-Visualizer2
+site_author: Fansure Grin
+site_description: A tool for visualizing bounding boxes and adding labels to a given image.
+copyright: Copyright @ 2023 Fansure Grin, All rights reserved.
+repo_url: https://github.com/fansuregrin/bbox-visualizer2
+
+theme:
+  name: material
+
+plugins: 
+  - mkdocstrings
+
+nav:
+  - Home: index.md
+  - Tutorials: tutorials.md
+  - How-To Guides: how-to-guides.md
+  - Reference: reference.md
+  - Explanation: explanation.md
