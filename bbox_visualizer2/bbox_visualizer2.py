@@ -89,15 +89,15 @@ class BBoxVisualizer:
     """Visualizer for Bounding Boxes.
 
     Attributes:
-        classes: A list of class names.
-        font_fp: Path to a font file.
-        colors: A list of colors; each color is a tuple of 3 intengers.
+        classes (List[str]): A list of class names.
+        font_fp (str): Path to a font file.
+        colors (List[Tuple[int]]): A list of colors; each color is a tuple of 3 intengers.
     """
     def __init__(self, classes: List[str], font_fp: str):
         """Initilize the BBoxVisualizer.
 
         Args:
-            classess: A list of class names; each class name is a string.
+            classes: A list of class names; each class name is a string.
             font_fp: Path to a font file.
         """
         self.classes = classes
@@ -173,7 +173,7 @@ def draw_rectangle(img: np.ndarray,
                    bbox_color: Tuple[int]=(255, 255, 255),
                    thickness: int=1,
                    is_opaque: bool=False,
-                   alpha: float=0.5):
+                   alpha: float=0.5) -> np.ndarray:
     """Draw the rectangle(bounding box) on the given image.
 
     Args:
