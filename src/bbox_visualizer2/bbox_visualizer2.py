@@ -239,7 +239,7 @@ def add_label(img: np.ndarray,
     if top:
         if draw_bg:
             fill_color = text_bg_color+(int(alpha*255),)
-            draw.rectangle((bbox[0], bbox[1], bbox[0]+label_width, bbox[1]-label_height), fill=fill_color)
+            draw.rectangle((bbox[0], bbox[1]-label_height, bbox[0]+label_width, bbox[1]), fill=fill_color)
         draw.text((bbox[0], bbox[1]), label, fill=text_color, font=font, anchor='lb')
     else:
         if draw_bg:
