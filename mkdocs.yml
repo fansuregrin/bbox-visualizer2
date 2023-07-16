@@ -3,9 +3,28 @@ site_author: Fansure Grin
 site_description: A tool for visualizing bounding boxes and adding labels to a given image.
 copyright: Copyright @ 2023 Fansure Grin, All rights reserved.
 repo_url: https://github.com/fansuregrin/bbox-visualizer2
+repo_name: fansuregrin/bbox-visualizer2
 
 theme:
   name: material
+  highlightjs: true
+  palette:
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.footer
 
 plugins: 
   - mkdocstrings
@@ -16,3 +35,8 @@ nav:
   - How-To Guides: how-to-guides.md
   - Reference: reference.md
   - Explanation: explanation.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fansuregrin
